@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{26A69196-8B89-4EE0-9AF6-29799F26403E}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>AutoTrade</RootNamespace>
+        <AssemblyName>AutoTrade</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+      <Content Include=".gitignore" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Include="AutoTrade.cs" />
+      <Compile Include="AutoTradeSettings.cs" />
+      <Compile Include="AutoTradeSettings.Designer.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="AutoTradeSettings.resx" />
+    </ItemGroup>
+    <ItemGroup>
+      <Reference Include="GreyMagic, Version=1.0.60.0, Culture=neutral, PublicKeyToken=260525fa2b0e778a">
+        <HintPath>..\..\GreyMagic.dll</HintPath>
+      </Reference>
+      <Reference Include="PresentationCore" />
+      <Reference Include="RebornBuddy, Version=1.0.455.0, Culture=neutral, PublicKeyToken=48d7174f8a943034">
+        <HintPath>..\..\RebornBuddy.exe</HintPath>
+      </Reference>
+      <Reference Include="System" />
+      <Reference Include="System.Windows.Forms" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Quest Behaviors\__LlamaLibrary\LlamaLibrary.csproj">
+        <Project>{196ee308-0205-4cc4-b449-51064f7e9960}</Project>
+        <Name>LlamaLibrary</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
